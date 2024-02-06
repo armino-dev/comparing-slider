@@ -1,0 +1,17 @@
+{
+  "verbose": true,
+  "github": {
+    "release": true,
+    "releaseName": "v${version}",
+    "preRelease": false
+  },
+  "src": {
+    "commitMessage": "Release v${version}",
+    "tagName": "v${version}",
+    "tagAnnotation": "Comparing Slider Release v${version}",
+    "afterReleaseCommand": "echo Successfully released Comparing Slider v${version}."
+  },
+  "npm": {
+    "publish": true
+  }
+}

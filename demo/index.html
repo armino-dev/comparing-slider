@@ -1,36 +1,169 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../dist/comparing-slider.min.css">
-	<title>Simple Image Comparing Slider</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Image Comparing Slider - Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.css" />
+    <link rel="stylesheet" href="index.css?v=980ea74e1c54776b5bb2cc8e3c33157c" />
 </head>
+
 <body>
-	<header>
-		<h1>A Simple Image Comparison Slider</h1>
-        <p>Inspire by Image Comparison Slider of CodyHouse</p>
-	</header>
+    <header>
+        <h1>A Simple Image Comparing Slider - Demo</h1>
+        <div class="credits">
+            <p>This is a vanilla javascript component to compare two images with a slider. Inspired from
+                <a href="https://github.com/codyhouse/image-comparison-slider"
+                    title="Image comparison slider of CodyHouse - GitHub" target="_blank"
+                    rel="nofollow noopener">CodyHouse's jQuery plugin</a>
+            </p>
+        </div>
+        <br /><br />
+    </header>
     <section id="hero">
-        <div id="container1" class="comparing-slider-container"></div>
-        <a href="https://gratisography.com/photo/reindeer-dog/">Photo</a> courtesy of <a href="https://gratisography.com">Gratisography</a>
+        <div id="hero-container"></div>
+        <div class="credits">
+            <a rel="nofollow noopener" href="https://gratisography.com/photo/reindeer-dog/" target="_blank"
+                title="Reindeer Dog">Photo</a>
+            courtesy of
+            <a href="https://gratisography.com" rel="nofollow noopener" target="_blank"
+                title="Free high-resolution pictures you can use on your personal and commercial projects. Click on an image to download the high-resolution version. New awesome pictures added weekly!">Gratisography</a>
+        </div>
     </section>
+    <main>
+        <div class="container">
+            <h2>Usage example</h2>
+            <h3>Using the scripts form cdn</h3>
+            <p>Include the following in your html file:</p>
+            <div class="">
+                <pre class="code">
+                    <code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;script src="https://esm.sh/@armino-dev/comparing-slider/dist/comparing-slider.min.js"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://esm.sh/@armino-dev/comparing-slider/dist/comparing-slider.min.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="hero-container"&gt;&lt;/div&gt;
+
+    ...the rest of your HTML...
     
-    <script src="../dist/comparing-slider.min.js"></script>
-    <script>
-        window.addEventListener('load', function() {
-            var comparingSlider1 = createComparingSlider({
-                containerId: 'container1',
-                left: {
-                    image: 'images/gratisography-reindeer-dog-bw.jpg',
-                    alt: 'Reindeer Dog in black and white'
-                },
-                right: {
-                    image: 'images/gratisography-reindeer-dog.jpg',
-                    alt: 'Reindeer Dog in color'
-                }
+    &lt;script type="text/javascript"&gt;
+        const options = {
+            containerId: 'hero-container',
+            left: {
+                // replace this with your image
+                image: 'images/gratisography-reindeer-dog-bw.jpg',
+                alt: 'Reindeer Dog in black and white'
+            },
+            right: {
+                // replace this with your image
+                image: 'images/gratisography-reindeer-dog.jpg',
+                alt: 'Reindeer Dog in color'
+            }
+        };
+
+         window.addEventListener("load", function () {
+            createComparingSlider(options);
+         });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+                    <button class="copy-code-button">Copy</button>
+                </pre>
+            </div>
+            <h3>Using the component ES6 style</h3>
+            <p>First install the component from npm</p>
+            <div class="">
+                <pre class="code">
+                    <code class="language-bash">npm install @armino-dev/comparing-slider</code>
+                    <button class="copy-code-button">Copy</button>
+                </pre>
+            </div>
+            <p>Import comparing slider styles in your css file</p>
+            <div class="">
+                <pre class="code">
+                    <code class="language-css">@import '@armino-dev/comparing-slider/dist/comparing-slider.min.css';</code>
+                    <button class="copy-code-button">Copy</button>
+                </pre>
+            </div>
+            <p>Import the component in your javascript file</p>
+            <div class="">
+                <pre class="code">
+                    <code class="language-javascript"
+                    >import ComparingSlider from '@armino-dev/comparing-slider';
+
+const options = {
+    containerId: 'hero-container',
+    left: {
+        // replace this with your image
+        image: 'images/gratisography-reindeer-dog-bw.jpg',
+        alt: 'Reindeer Dog in black and white'
+    },
+    right: {
+        // replace this with your image
+        image: 'images/gratisography-reindeer-dog.jpg',
+        alt: 'Reindeer Dog in color'
+    }
+};
+
+window.addEventListener("load", function () {
+    ComparingSlider.create(options);
+});
+                    </code>
+                    <button class="copy-code-button">Copy</button>
+                </pre>
+            </div>
+    </main>
+    <footer>
+        <div class="footer">Copyright &copy; 2024 Armino.</div>
+    </footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="../dist/comparing-slider.min.js?v=afc3dd6fa688bf08cdd0f11ac75d81e22876d965"></script>
+<script type="text/javascript">
+    window.addEventListener("load", function () {
+        document.querySelectorAll(".copy-code-button").forEach(function (button) {
+            button.addEventListener("click", function () {
+                // Get the code element
+                var codeElement = this.parentElement.querySelector("code");
+
+                // Create a temporary textarea to copy the code
+                var textarea = document.createElement("textarea");
+                textarea.value = codeElement.innerText;
+                document.body.appendChild(textarea);
+
+                // Select and copy the code
+                textarea.select();
+                document.execCommand("copy");
+
+                // Remove the temporary textarea
+                document.body.removeChild(textarea);
+
+                // Change the button text to "Copied!" for a short duration
+                var originalText = this.innerText;
+                this.innerText = "Copied!";
+                setTimeout(function () {
+                    button.innerText = originalText;
+                }, 1500);
             });
         });
-    </script>
-</body>
+        const options = {
+            containerId: "hero-container",
+            left: {
+                image: "images/gratisography-reindeer-dog-bw.jpg",
+                alt: "Reindeer Dog in black and white",
+            },
+            right: {
+                image: "images/gratisography-reindeer-dog.jpg",
+                alt: "Reindeer Dog in color",
+            },
+        };
+        createComparingSlider(options);
+    });
+</script>
+
 </html>
