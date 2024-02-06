@@ -1,0 +1,41 @@
+{
+  "name": "comparing-slider",
+  "version": "1.0.0",
+  "description": "A simple image comparison slider",
+  "main": "src/comparing-slider.js",
+  "scripts": {
+    "build": "npm run prod",
+    "unit": "karma start karma.conf.js",
+    "report-coverage": "codecov",
+    "test": "npm run unit",
+    "dev": "NODE_ENV=development node esbuild.mjs",
+    "prod": "NODE_ENV=production node esbuild.mjs",
+    "lint": "npx eslint ./src/**/*.js",
+    "format": "npx eslint ./src/**/*.js --fix",
+    "watch": "NODE_ENV=development node esbuild.mjs --watch",
+    "release": "release-it"
+  },
+  "keywords": [
+    "js",
+    "javascript"
+  ],
+  "author": "Armino Popp, <devel@boioiong.com>",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "codecov": "^3.8.2",
+    "esbuild": "^0.19.9",
+    "esbuild-sass-plugin": "^2.16.1",
+    "eslint": "^8.53.0",
+    "eslint-config-jquery": "^3.0.2",
+    "eslint-plugin-jquery": "^1.5.1",
+    "karma": "^6.3.20",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-coverage": "^2.2.0",
+    "karma-jasmine": "^5.0.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "postcss": "^8.4.33",
+    "puppeteer": "^21.4.0",
+    "release-it": "^17.0.3"
+  },
+  "license": "MIT"
+}

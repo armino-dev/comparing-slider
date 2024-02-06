@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../dist/comparing-slider.min.css">
+	<title>Simple Image Comparing Slider</title>
+</head>
+<body>
+	<header>
+		<h1>A Simple Image Comparison Slider</h1>
+        <p>Inspire by Image Comparison Slider of CodyHouse</p>
+	</header>
+    <section id="hero">
+        <div id="container1" class="comparing-slider-container"></div>
+        <a href="https://gratisography.com/photo/reindeer-dog/">Photo</a> courtesy of <a href="https://gratisography.com">Gratisography</a>
+    </section>
+    
+    <script src="../dist/comparing-slider.min.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            var comparingSlider1 = createComparingSlider({
+                containerId: 'container1',
+                left: {
+                    image: 'images/gratisography-reindeer-dog-bw.jpg',
+                    alt: 'Reindeer Dog in black and white'
+                },
+                right: {
+                    image: 'images/gratisography-reindeer-dog.jpg',
+                    alt: 'Reindeer Dog in color'
+                }
+            });
+        });
+    </script>
+</body>
+</html>
