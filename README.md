@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-### **Please take a look at [this working example on  CodePen](https://codepen.io/armino-dev/pen/zYbjdJw).**
+### **Please take a look at [this working example on  CodePen](https://codepen.io/armino-dev/pen/PoLBdMd).**
 
 ## Demo
 
