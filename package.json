@@ -1,5 +1,6 @@
 {
   "name": "@armino-dev/comparing-slider",
+  "title": "Comparing Slider",
   "version": "1.0.0",
   "description": "A simple image comparing slider UI",
   "homepage": "https://github.com/armino-dev/comparing-slider#readme",
@@ -26,7 +27,8 @@
   },
   "keywords": [
     "js",
-    "javascript"
+    "javascript",
+    "ui"
   ],
   "author": {
     "name": "Armino Popp, <devel@boioiong.com>",
