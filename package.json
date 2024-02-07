@@ -1,7 +1,7 @@
 {
   "name": "@armino-dev/comparing-slider",
   "title": "Comparing Slider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple image comparing slider UI",
   "homepage": "https://github.com/armino-dev/comparing-slider#readme",
   "main": "src/comparing-slider.js",
@@ -24,6 +24,9 @@
   },
   "bugs": {
     "url": "https://github.com/armino-dev/comparing-slider/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "js",
