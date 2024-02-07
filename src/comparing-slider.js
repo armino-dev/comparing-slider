@@ -1,7 +1,8 @@
-class ComparingSlider {
+export default class ComparingSlider {
     constructor(options) {
         this.dragging = false;
         this.container = document.getElementById(options.containerId);
+        this.container.classList.add('comparing-slider-container');
         this.container.innerHTML = `
             <img width="100%" src="${options?.right?.image}" alt="${options?.right?.alt ?? ''}">
             <div class="comparing-slider-resize-layer">
@@ -85,5 +86,3 @@ class ComparingSlider {
 }
 
 window.createComparingSlider = (options) => new ComparingSlider(options);
-
-export default ComparingSlider;

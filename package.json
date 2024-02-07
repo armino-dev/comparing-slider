@@ -1,13 +1,15 @@
 {
-  "name": "comparing-slider",
-  "version": "1.0.0",
-  "description": "A simple image comparison slider",
+  "name": "@armino-dev/comparing-slider",
+  "version": "0.0.1",
+  "description": "A simple image comparing slider UI",
+  "homepage": "https://github.com/armino-dev/comparing-slider#readme",
   "main": "src/comparing-slider.js",
   "scripts": {
-    "build": "npm run prod",
+    "build": "npm run prod && npm run demo",
     "unit": "karma start karma.conf.js",
     "report-coverage": "codecov",
     "test": "npm run unit",
+    "demo": "node demobuild.mjs",
     "dev": "NODE_ENV=development node esbuild.mjs",
     "prod": "NODE_ENV=production node esbuild.mjs",
     "lint": "npx eslint ./src/**/*.js",
@@ -15,11 +17,21 @@
     "watch": "NODE_ENV=development node esbuild.mjs --watch",
     "release": "release-it"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armino-dev/comparing-slider.git"
+  },
+  "bugs": {
+    "url": "https://github.com/armino-dev/comparing-slider/issues"
+  },
   "keywords": [
     "js",
     "javascript"
   ],
-  "author": "Armino Popp, <devel@boioiong.com>",
+  "author": {
+    "name": "Armino Popp, <devel@boioiong.com>",
+    "url": "https://github.com/armino-dev"
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "codecov": "^3.8.2",
@@ -31,6 +43,7 @@
     "karma": "^6.3.20",
     "karma-chrome-launcher": "^3.1.1",
     "karma-coverage": "^2.2.0",
+    "karma-esbuild": "^2.3.0",
     "karma-jasmine": "^5.0.1",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.4.33",
