@@ -48,7 +48,7 @@
     "karma-esbuild": "^2.3.0",
     "karma-jasmine": "^5.0.1",
     "mini-css-extract-plugin": "^2.6.0",
-    "postcss": "^8.4.33",
+    "postcss": "^8.4.35",
     "puppeteer": "^21.4.0",
     "release-it": "^17.0.3"
   },
