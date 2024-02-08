@@ -50,20 +50,16 @@ describe('ComparingSlider', () => {
     });
 
     it('should animate the handle and resize layer', () => {
+        const container = document.getElementById('slider-container');
         const event = {
-            pageX: 100
+            type: 'mousemove',
+            pageX: container.offsetWidth,
         };
-        const xPosition = 50;
-        const dragWidth = 0;
-        const minLeft = 0;
-        const maxLeft = 100;
-        const containerOffset = 0;
-        const containerWidth = 200;
 
-        slider.animateHandle(event, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth);
+        slider.animateHandle(event);
 
-        expect(slider.handle.style.left).toBe('50%');
-        expect(slider.resizeLayer.style.width).toBe('50%');
+        expect(slider.handle.style.left).toBe('100%');
+        expect(slider.resizeLayer.style.width).toBe('100%');
         expect(slider.dragging).toBe(false);
     });
 
@@ -82,24 +78,20 @@ describe('ComparingSlider', () => {
     });
 
     it('should handle mouse move event', () => {
+        const container = document.getElementById('slider-container');
         const event = {
-            pageX: 150
+            type: 'mousemove',
+            pageX: container.getBoundingClientRect().left,
         };
-        const xPosition = 50;
-        const dragWidth = 0;
-        const minLeft = 0;
-        const maxLeft = 10;
-        const containerOffset = 0;
-        const containerWidth = 200;
 
         slider.dragging = true;
         slider.handle.classList.add('draggable');
         slider.resizeLayer.classList.add('resizable');
 
-        slider.animateHandle(event, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth);
+        slider.animateHandle(event);
 
-        expect(slider.handle.style.left).toBe('5%');
-        expect(slider.resizeLayer.style.width).toBe('5%');
+        expect(slider.handle.style.left).toBe('50%');
+        expect(slider.resizeLayer.style.width).toBe('50%');
         expect(slider.dragging).toBe(false);
     });
 });
