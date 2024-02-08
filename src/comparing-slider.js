@@ -21,6 +21,7 @@ export default class ComparingSlider {
         window.addEventListener('scroll', this.throttledScrollHandler.bind(this));
         window.addEventListener('resize', this.throttledScrollHandler.bind(this));
         this.container.addEventListener("mousedown", this.handleMouseDown.bind(this));
+        this.container.addEventListener("touchstart", this.handleMouseDown.bind(this));
     }
 
     checkInitialPosition() {
@@ -38,9 +39,15 @@ export default class ComparingSlider {
         }
     }
 
-    animateHandle(event, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth) {
-        let leftValue = event.pageX + xPosition - dragWidth;
-        leftValue = Math.max(minLeft, Math.min(leftValue, maxLeft));
+    animateHandle(event) {
+        const eventX = event.type === 'touchmove' ? event.changedTouches[0].pageX : event.pageX;
+        const dragWidth = this.handle.offsetWidth;
+        const containerOffset = this.container.getBoundingClientRect().left;
+        const containerWidth = this.container.offsetWidth;
+        const minLeft = containerOffset - dragWidth / 2;
+        const maxLeft = containerOffset + containerWidth - dragWidth / 2;
+
+        const leftValue = Math.max(minLeft, Math.min(eventX, maxLeft));
         const widthValue = ((leftValue + dragWidth / 2 - containerOffset) / containerWidth) * 100 + '%';
 
         this.handle.style.left = widthValue;
@@ -50,23 +57,18 @@ export default class ComparingSlider {
     }
 
     handleMouseDown(event) {
+        event.preventDefault();
+        
         const isHandle = event.target.classList.contains('comparing-slider-handle');
         if (!isHandle) return;
 
         this.dragging = true;
         this.handle.classList.add('draggable');
         this.resizeLayer.classList.add('resizable');
-
-        const dragWidth = this.handle.offsetWidth;
-        const xPosition = this.handle.getBoundingClientRect().left + dragWidth - event.pageX;
-        const containerOffset = this.container.getBoundingClientRect().left;
-        const containerWidth = this.container.offsetWidth;
-        const minLeft = containerOffset - dragWidth/2;
-        const maxLeft = containerOffset + containerWidth - dragWidth/2;
-
+        
         const moveHandler = (e) => {
             requestAnimationFrame(() => {
-                this.animateHandle(e, xPosition, dragWidth, minLeft, maxLeft, containerOffset, containerWidth);
+                this.animateHandle(e);
             });
         };
 
@@ -75,13 +77,15 @@ export default class ComparingSlider {
             this.handle.classList.remove('draggable');
             this.resizeLayer.classList.remove('resizable');
             document.removeEventListener("mousemove", moveHandler);
+            document.removeEventListener("touchmove", moveHandler);
             document.removeEventListener("mouseup", releaseHandler);
+            document.removeEventListener("touchend", releaseHandler);
         };
 
         document.addEventListener("mousemove", moveHandler);
+        document.addEventListener("touchmove", moveHandler);
         document.addEventListener("mouseup", releaseHandler);
-
-        event.preventDefault();
+        document.addEventListener("touchend", releaseHandler);
     }
 }
 
