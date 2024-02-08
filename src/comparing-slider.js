@@ -58,7 +58,7 @@ export default class ComparingSlider {
 
     handleMouseDown(event) {
         event.preventDefault();
-        console.log(event.type);
+        
         const isHandle = event.target.classList.contains('comparing-slider-handle');
         if (!isHandle) return;
 
