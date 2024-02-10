@@ -1,7 +1,7 @@
 # Comparing Slider
 
-This is a vanilla javascript component to compare two images with a slider. Inspired from 
-[CodyHouse's jQuery plugin](https://github.com/codyhouse/image-comparison-slider)
+This is a vanilla javascript component to compare two images with a slider. 
+Inspired from [CodyHouse's jQuery plugin](https://github.com/codyhouse/image-comparison-slider)
 
 ## Getting started
 
@@ -26,13 +26,13 @@ import '@armino-dev/comparing-slider/dist/comparing-slider.min.css';
 ### Directly into your html from node_modules
 
 ```html
-<script src="node_modules/@armino-dev/comparing-slider/dist/comparing-slider.min.js"></script>
+<script type="module" src="node_modules/@armino-dev/comparing-slider/dist/comparing-slider.min.js"></script>
 <link rel="stylesheet" href="node_modules/@armino-dev/comparing-slider-dialog/dist/comparing-slider.min.css" />
 ```
 
 ### Directly into your html from cdn
 ```html
-<script src="https://esm.sh/@armino-dev/comparing-slider/dist/comparing-slider.min.js"></script>
+<script type="module" src="https://esm.sh/@armino-dev/comparing-slider/dist/comparing-slider.min.js"></script>
 <link rel="stylesheet" href="https://esm.sh/@armino-dev/comparing-slider/dist/comparing-slider.min.css" />
 ```
 
