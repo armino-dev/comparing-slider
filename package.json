@@ -52,7 +52,7 @@
     "karma-jasmine": "^5.0.1",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss": "^8.4.35",
-    "puppeteer": "^23.8.0",
+    "puppeteer": "^24.2.0",
     "release-it": "^17.0.3"
   },
   "license": "MIT"
